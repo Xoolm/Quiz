@@ -8,6 +8,9 @@ import {
   newQuestion,
   correctVariant,
   newGame,
+  preparetionGame,
+  shaffle,
+  shaffleTemplate,
 } from "./reduxToolkit/toolkitSlice";
 
 function App() {
@@ -16,8 +19,41 @@ function App() {
     <div className="App">
       <div className="wrapper">
         <div className="quizeBord">
-          {prepaire === true && <Preparation />}
-          {prepaire === false && <Game />}
+          {prepaire === 0 && <MainScreen />}
+          {prepaire === 1 && <Preparation />}
+          {prepaire === 2 && <Game />}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function MainScreen() {
+  const dispatch = useDispatch();
+  const StartGame = () => {
+    dispatch(shaffle());
+    dispatch(startGame());
+    dispatch(nextQuestion());
+  };
+  return (
+    <div className="mainScreen">
+      <div className="mainScreenText">
+        <h1>The Quiz Game</h1>
+        <p>
+          Игра-викторина, которая поможет вам проверить свои знания и узнать
+          новые интересные факты. В игре представлены вопросы из разных областей
+          знаний, таких как история, география, естествознание, литература и
+          многое другое.
+        </p>
+      </div>
+      <div className="mainScreenBtn">
+        <div className="btnPlay">
+          <button onClick={StartGame}>Базовый шаблон</button>
+        </div>
+        <div className="btnNewQuestion">
+          <button onClick={() => dispatch(preparetionGame())}>
+            Cвой шаблон
+          </button>
         </div>
       </div>
     </div>
@@ -34,24 +70,31 @@ function Game() {
   const step = useSelector((state) => state.toolkit.step);
   const result = useSelector((state) => state.toolkit.result);
   const correct = useSelector((state) => state.toolkit.correct);
-  console.log(correct);
-  console.log(questionBank);
+  const myTemplate = useSelector((state) => state.toolkit.myTemplate);
+  const Template = useSelector((state) => state.toolkit.Template);
   const onClickVariant = (index) => {
-    console.log(step, index);
     addQuestion();
     if (index === question.correct) {
       dispatch(correctVariant());
     }
+  };
+  const reset = () => {
+    dispatch(shaffle());
+    dispatch(resetGame());
+  };
+  const resetTemaplate = () => {
+    dispatch(shaffleTemplate());
+    dispatch(resetGame());
   };
   const percentage = Math.round((step / questionBank.length) * 100);
   return (
     <>
       {result === false && (
         <>
-          <div class="progress">
+          <div className="progress">
             <progress max="100" value={percentage}></progress>
-            <div class="progress-bg">
-              <div class="progress-bar"></div>
+            <div className="progress-bg">
+              <div className="progress-bar"></div>
             </div>
           </div>
           <h1 className="quizeTitle">{question.title}</h1>
@@ -72,15 +115,22 @@ function Game() {
         <>
           <h1 className="gameTitle">Игра окончена</h1>
           <h2 className="gameCorrect">
-            Вы правильно ответили на [ {correct} ] из [ {questionBank.length} ]
+            Ваш результат: [ {correct} ] из{" "}
+            {myTemplate ? [Template.length] : [questionBank.length]}
           </h2>
           <div className="gameBtn">
             <button className="newGame" onClick={() => dispatch(newGame())}>
               Новая Игра
             </button>
-            <button className="reverse" onClick={() => dispatch(resetGame())}>
-              Повторить
-            </button>
+            {myTemplate ? (
+              <button className="reverse" onClick={resetTemaplate}>
+                Повторить
+              </button>
+            ) : (
+              <button className="reverse" onClick={reset}>
+                Повторить
+              </button>
+            )}
           </div>
         </>
       )}
@@ -97,6 +147,7 @@ function Preparation() {
   const [correct, setCorrect] = useState("");
 
   const StartGame = () => {
+    dispatch(shaffleTemplate());
     dispatch(startGame());
     dispatch(nextQuestion());
   };
@@ -118,9 +169,7 @@ function Preparation() {
   };
   return (
     <>
-      <h1 className="PreparationTitle">
-        Заполните поля с "Вопросом" и "Вариантами ответа"
-      </h1>
+      <h1 className="PreparationTitle">Заполните поля "Вопрос" и "Ответ"</h1>
       <div className="PreparationQuestion">
         <p className="question">Вопрос</p>
         <input
