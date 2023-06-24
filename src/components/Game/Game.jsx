@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   nextQuestion,
@@ -10,6 +11,7 @@ import {
 } from "../../reduxToolkit/toolkitSlice";
 
 const Game = () => {
+  const [press, setPress] = useState(false);
   const dispatch = useDispatch();
   const addQuestion = () => {
     dispatch(nextQuestion());
@@ -22,6 +24,8 @@ const Game = () => {
   const myTemplate = useSelector((state) => state.toolkit.myTemplate);
   const Template = useSelector((state) => state.toolkit.Template);
   const onClickVariant = (index) => {
+    setPress(true);
+    setTimeout(() => setPress(false), 200);
     addQuestion();
     if (index === question.correct) {
       dispatch(correctVariant());
@@ -50,7 +54,7 @@ const Game = () => {
           <ul className="quize">
             {question.variants.map((text, index) => (
               <li
-                className="variants"
+                className={`variants ${press && "active"}`}
                 onClick={() => onClickVariant(index)}
                 key={text}
               >
