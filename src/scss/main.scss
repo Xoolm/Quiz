@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
 @import "./App";
-@import "./Game";
-@import "./Preparation";
-
+@import "../components/Game/Game";
+@import "../components/Preparation/Preparation";
+@import "../components/MainScreen/MainScreen";
 * {
   margin: 0;
   padding: 0;

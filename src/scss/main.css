@@ -24,56 +24,6 @@
   padding: 15px;
   border-radius: 30px;
 }
-.App .wrapper .quizeBord .mainScreen {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-.App .wrapper .quizeBord .mainScreen .mainScreenText h1 {
-  font-weight: 600;
-}
-.App .wrapper .quizeBord .mainScreen .mainScreenText p {
-  margin-top: 10px;
-  font-size: 18px;
-  width: 550px;
-  font-weight: normal;
-  font-family: "Comfortaa", cursive;
-}
-.App .wrapper .quizeBord .mainScreen .mainScreenBtn {
-  display: flex;
-  justify-content: space-between;
-  margin: 40px 0px 10px;
-  width: 100%;
-}
-.App .wrapper .quizeBord .mainScreen .mainScreenBtn .btnPlay,
-.App .wrapper .quizeBord .mainScreen .mainScreenBtn .btnNewQuestion {
-  display: flex;
-  flex-direction: column;
-  border: none;
-}
-.App .wrapper .quizeBord .mainScreen .mainScreenBtn .btnPlay button,
-.App .wrapper .quizeBord .mainScreen .mainScreenBtn .btnNewQuestion button {
-  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
-  cursor: pointer;
-  padding: 10px 20px;
-  border-radius: 10px;
-  font-size: 18px;
-  font-family: "Comfortaa", cursive;
-  border: none;
-  color: white;
-  background: linear-gradient(49deg, #4553bf, #4f7873);
-  opacity: 0.8;
-}
-.App .wrapper .quizeBord .mainScreen .mainScreenBtn .btnPlay button:hover,
-.App .wrapper .quizeBord .mainScreen .mainScreenBtn .btnNewQuestion button:hover {
-  background: linear-gradient(49deg, #4553bf, #4f7873);
-  transition: 0.2s;
-  opacity: 1;
-}
-.App .wrapper .quizeBord .mainScreen .mainScreenBtn .btnPlay button:active,
-.App .wrapper .quizeBord .mainScreen .mainScreenBtn .btnNewQuestion button:active {
-  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.8);
-}
 
 .quizeTitle {
   font-size: 30px;
@@ -988,6 +938,56 @@
 }
 .PreparationBtn .startQuiz:active,
 .PreparationBtn .addQuestion:active {
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.8);
+}
+
+.mainScreen {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.mainScreen .mainScreenText h1 {
+  font-weight: 600;
+}
+.mainScreen .mainScreenText p {
+  margin-top: 10px;
+  font-size: 18px;
+  width: 550px;
+  font-weight: normal;
+}
+.mainScreen .mainScreenBtn {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0px 10px;
+  width: 100%;
+}
+.mainScreen .mainScreenBtn .btnPlay,
+.mainScreen .mainScreenBtn .btnNewQuestion {
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+.mainScreen .mainScreenBtn .btnPlay button,
+.mainScreen .mainScreenBtn .btnNewQuestion button {
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-family: "Comfortaa", cursive;
+  border: none;
+  color: white;
+  background: linear-gradient(49deg, #4553bf, #4f7873);
+  opacity: 0.8;
+}
+.mainScreen .mainScreenBtn .btnPlay button:hover,
+.mainScreen .mainScreenBtn .btnNewQuestion button:hover {
+  background: linear-gradient(49deg, #4553bf, #4f7873);
+  transition: 0.2s;
+  opacity: 1;
+}
+.mainScreen .mainScreenBtn .btnPlay button:active,
+.mainScreen .mainScreenBtn .btnNewQuestion button:active {
   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.8);
 }
 

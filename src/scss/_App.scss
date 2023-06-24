@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
 .App {
   width: 100%;
   height: 100vh;
@@ -22,61 +20,6 @@
       box-shadow: 2px 2px 10px rgba($color: #000000, $alpha: 0.5);
       padding: 15px;
       border-radius: 30px;
-
-      .mainScreen {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-
-        .mainScreenText {
-          h1 {
-            font-weight: 600;
-          }
-
-          p {
-            margin-top: 10px;
-            font-size: 18px;
-            width: 550px;
-            font-weight: normal;
-            font-family: "Comfortaa", cursive;
-          }
-        }
-
-        .mainScreenBtn {
-          display: flex;
-          justify-content: space-between;
-          margin: 40px 0px 10px;
-          width: 100%;
-
-          .btnPlay,
-          .btnNewQuestion {
-            display: flex;
-            flex-direction: column;
-            border: none;
-
-            button {
-              box-shadow: 2px 2px 3px rgba($color: #000000, $alpha: 0.8);
-              cursor: pointer;
-              padding: 10px 20px;
-              border-radius: 10px;
-              font-size: 18px;
-              font-family: "Comfortaa", cursive;
-              border: none;
-              color: white;
-              background: linear-gradient(49deg, #4553bf, #4f7873);
-              opacity: 0.8;
-              &:hover {
-                background: linear-gradient(49deg, #4553bf, #4f7873);
-                transition: 0.2s;
-                opacity: 1;
-              }
-              &:active {
-                box-shadow: 0px 0px 0px rgba($color: #000000, $alpha: 0.8);
-              }
-            }
-          }
-        }
-      }
     }
   }
 }
