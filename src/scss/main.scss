@@ -14,3 +14,8 @@
   padding: 0;
   box-sizing: border-box;
 }
+input[type="text"],
+input[type="submit"],
+textarea {
+  -webkit-appearance: none;
+}

@@ -1190,6 +1190,10 @@
     font-weight: 500;
     font-size: 15px;
   }
+  .PreparationAnswers input.false,
+  .PreparationQuestion input.false {
+    border: 1px solid red;
+  }
   .PreparationBtn {
     display: flex;
     align-items: center;
@@ -1224,4 +1228,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+input[type=text],
+input[type=submit],
+textarea {
+  -webkit-appearance: none;
 }/*# sourceMappingURL=main.css.map */
