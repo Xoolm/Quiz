@@ -9,20 +9,35 @@ import {
 } from "../../reduxToolkit/toolkitSlice";
 
 const Preparation = () => {
+  const [validation, setValidation] = useState(true);
   const [title, setTitle] = useState("");
   const [variants1, setVariants1] = useState("");
   const [variants2, setVariants2] = useState("");
   const [variants3, setVariants3] = useState("");
   const [variants4, setVariants4] = useState("");
   const [correct, setCorrect] = useState("");
-
+  console.log(validation);
   const StartGame = () => {
     dispatch(shaffleTemplate());
     dispatch(startGame());
     dispatch(nextQuestion());
   };
   const dispatch = useDispatch();
+
   const newQuestione = () => {
+    if (
+      title === "" ||
+      variants1 === "" ||
+      variants2 === "" ||
+      variants3 === "" ||
+      variants4 === "" ||
+      correct === ""
+    ) {
+      setValidation(false);
+      return;
+    } else {
+      setValidation(true);
+    }
     dispatch(
       newQuestion({
         title: title,
@@ -43,6 +58,7 @@ const Preparation = () => {
       <div className="PreparationQuestion">
         <p className="question">Вопрос</p>
         <input
+          className={`${validation && "true"}`}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Вопрос"
           type="text"
@@ -52,6 +68,7 @@ const Preparation = () => {
       <div className="PreparationAnswers">
         <p className="titleAnswer">Ответ 1</p>
         <input
+          className={`${validation && "true"}`}
           onChange={(e) => setVariants1(e.target.value)}
           placeholder="Ответ 1"
           type="text"
@@ -59,6 +76,7 @@ const Preparation = () => {
         ></input>
         <p className="titleAnswer">Ответ 2</p>
         <input
+          className={`${validation && "true"}`}
           onChange={(e) => setVariants2(e.target.value)}
           placeholder="Ответ 2"
           type="text"
@@ -66,6 +84,7 @@ const Preparation = () => {
         ></input>
         <p className="titleAnswer">Ответ 3</p>
         <input
+          className={`${validation && "true"}`}
           onChange={(e) => setVariants3(e.target.value)}
           placeholder="Ответ 3"
           type="text"
@@ -73,6 +92,7 @@ const Preparation = () => {
         ></input>
         <p className="titleAnswer">Ответ 4</p>
         <input
+          className={`${validation && "true"}`}
           onChange={(e) => setVariants4(e.target.value)}
           placeholder="Ответ 4"
           type="text"
@@ -80,6 +100,7 @@ const Preparation = () => {
         ></input>
         <p className="correctTitle">Номер верного ответа</p>
         <input
+          className={`${validation && "true"}`}
           onChange={(e) => setCorrect(e.target.value)}
           placeholder="Правильный ответ"
           type="text"
