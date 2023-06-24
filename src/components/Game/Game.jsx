@@ -25,8 +25,8 @@ const Game = () => {
   const Template = useSelector((state) => state.toolkit.Template);
   const onClickVariant = (index) => {
     setPress(true);
-    setTimeout(() => setPress(false), 200);
-    addQuestion();
+    setTimeout(() => setPress(false), 500);
+    setTimeout(() => addQuestion(), 250);
     if (index === question.correct) {
       dispatch(correctVariant());
     }

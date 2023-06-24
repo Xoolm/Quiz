@@ -51,11 +51,7 @@
       background: linear-gradient(49deg, #4553bf, #4f7873);
       opacity: 0.8;
       margin: 5px;
-      &:hover {
-        background: none;
-        transition: none;
-        opacity: 0;
-      }
+      pointer-events: none;
     }
   }
 }
