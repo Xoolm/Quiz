@@ -1,0 +1,64 @@
+@media (max-width: 450px) {
+  .quizeTitle {
+    line-height: 28px;
+    user-select: none;
+  }
+
+  .quize {
+    user-select: none;
+    font-size: 20px;
+  }
+
+  .variants {
+    font-family: "Comfortaa", cursive;
+    cursor: pointer;
+    padding: 15px 15px;
+    border: 2px solid grey;
+    width: 100%;
+    margin: 20px auto 20px;
+    border-radius: 20px;
+    list-style-type: none;
+    transition: 0.2s;
+    &:hover {
+      border: 2px solid #008ae6;
+      background: #99d6ff;
+    }
+    &:active {
+      background: #006bb3;
+    }
+  }
+
+  .gameTitle {
+    text-align: center;
+  }
+  .gameCorrect {
+    text-align: center;
+  }
+  .gameBtn {
+    user-select: none;
+    border: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 20px;
+    .newGame,
+    .reverse {
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 18px;
+      font-family: "Comfortaa", cursive;
+      border: none;
+      color: white;
+      background: linear-gradient(49deg, #4553bf, #4f7873);
+      opacity: 0.8;
+      margin: 5px;
+      &:hover {
+        background: linear-gradient(49deg, #4553bf, #4f7873);
+        transition: 0.2s;
+        opacity: 1;
+      }
+      &:active {
+        box-shadow: 0px 0px 0px rgba($color: #000000, $alpha: 0.8);
+      }
+    }
+  }
+}

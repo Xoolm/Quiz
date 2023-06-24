@@ -39,7 +39,7 @@ const Preparation = () => {
   };
   return (
     <>
-      <h1 className="PreparationTitle">Заполните поля "Вопрос" и "Ответ"</h1>
+      <h1 className="PreparationTitle">Заполните все поля</h1>
       <div className="PreparationQuestion">
         <p className="question">Вопрос</p>
         <input
@@ -78,7 +78,7 @@ const Preparation = () => {
           type="text"
           value={variants4}
         ></input>
-        <p className="correctTitle">Правильный ответ</p>
+        <p className="correctTitle">Номер верного ответа</p>
         <input
           onChange={(e) => setCorrect(e.target.value)}
           placeholder="Правильный ответ"

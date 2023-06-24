@@ -1,13 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
+@import "../../common/adaptiv-font";
 .quizeTitle {
-  font-size: 30px;
+  margin-top: 15px;
+  @include adaptiv-font(30, 22);
+  user-select: none;
+  text-align: center;
 }
 
 .quize {
+  user-select: none;
   font-size: 20px;
 }
 
 .variants {
+  @include adaptiv-font(20, 14);
   font-family: "Comfortaa", cursive;
   cursor: pointer;
   padding: 10px 15px;
@@ -33,6 +39,7 @@
   text-align: center;
 }
 .gameBtn {
+  user-select: none;
   border: none;
   display: flex;
   justify-content: space-around;

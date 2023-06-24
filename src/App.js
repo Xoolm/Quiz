@@ -3,7 +3,6 @@ import MainScreen from "./components/MainScreen/MainScreen";
 import Game from "./components/Game/Game";
 import Preparation from "./components/Preparation/Preparation";
 import { useSelector } from "react-redux";
-
 function App() {
   const prepaire = useSelector((state) => state.toolkit.Prepair);
   return (

@@ -1,7 +1,11 @@
+@import "../../common/adaptiv-font";
+
 .PreparationTitle,
 .titleAnswer,
 .correctTitle,
 .question {
+  text-align: center;
+  @include adaptiv-font(30, 22);
   margin-top: 10px;
   font-weight: 700;
 }
@@ -9,7 +13,7 @@
 .titleAnswer,
 .correctTitle,
 .question {
-  font-size: 20px;
+  @include adaptiv-font(20, 16);
 }
 
 .correctTitle {

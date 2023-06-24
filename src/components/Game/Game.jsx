@@ -64,7 +64,7 @@ const Game = () => {
         <>
           <h1 className="gameTitle">Игра окончена</h1>
           <h2 className="gameCorrect">
-            Ваш результат: [ {correct} ] из{" "}
+            Ваш результат: {correct} из{" "}
             {myTemplate ? [Template.length] : [questionBank.length]}
           </h2>
           <div className="gameBtn">

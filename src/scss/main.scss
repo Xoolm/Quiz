@@ -4,6 +4,11 @@
 @import "../components/Game/Game";
 @import "../components/Preparation/Preparation";
 @import "../components/MainScreen/MainScreen";
+//adaptation
+@import "../scss/App-adaptation";
+@import "../components/MainScreen/adaptation/MainScreen-Mobile";
+@import "../components/Game/adaptation/Game-Mobile";
+@import "../components/Preparation/adaptation/Preparation-Mobile";
 * {
   margin: 0;
   padding: 0;

@@ -1,0 +1,53 @@
+@media (max-width: 450px) {
+  .mainScreen {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    .mainScreenText {
+      h1 {
+        font-weight: 600;
+      }
+
+      p {
+        margin-top: 10px;
+        font-size: 18px;
+        font-weight: normal;
+      }
+    }
+
+    .mainScreenBtn {
+      display: flex;
+      justify-content: space-between;
+      margin: 40px 0px 10px;
+      width: 100%;
+
+      .btnPlay,
+      .btnNewQuestion {
+        display: flex;
+        flex-direction: column;
+        border: none;
+
+        button {
+          box-shadow: 2px 2px 3px rgba($color: #000000, $alpha: 0.8);
+          cursor: pointer;
+          padding: 20px 5px;
+          border-radius: 10px;
+          font-family: "Comfortaa", cursive;
+          border: none;
+          color: white;
+          background: linear-gradient(49deg, #4553bf, #4f7873);
+          opacity: 0.8;
+          &:hover {
+            background: linear-gradient(49deg, #4553bf, #4f7873);
+            transition: 0.2s;
+            opacity: 1;
+          }
+          &:active {
+            box-shadow: 0px 0px 0px rgba($color: #000000, $alpha: 0.8);
+          }
+        }
+      }
+    }
+  }
+}

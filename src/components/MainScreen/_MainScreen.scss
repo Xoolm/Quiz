@@ -1,3 +1,4 @@
+@import "../../common/adaptiv-font";
 .mainScreen {
   display: flex;
   flex-direction: column;
@@ -11,7 +12,6 @@
     p {
       margin-top: 10px;
       font-size: 18px;
-      width: 550px;
       font-weight: normal;
     }
   }
@@ -33,7 +33,7 @@
         cursor: pointer;
         padding: 10px 20px;
         border-radius: 10px;
-        font-size: 18px;
+        @include adaptiv-font(18, 13);
         font-family: "Comfortaa", cursive;
         border: none;
         color: white;
